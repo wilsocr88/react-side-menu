@@ -74,4 +74,4 @@ OR
 
 ## CONTRIBUTING
 
-See [CONTRIBUTING](https://github.com/wilsocr88/react-side-menu/blob/master/CONTRIBUTING)
+See [CONTRIBUTING](https://github.com/wilsocr88/react-side-menu/blob/master/CONTRIBUTING.md)
