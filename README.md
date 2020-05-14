@@ -72,6 +72,6 @@ OR
 |------------:|-------------:|------:|
 | hr | boolean  | if true, this spot in the menu will display a horizonal separator line |
 
-## CONTRIBUTING [![contributions welcome](https://github.com/wilsocr88/react-side-menu/blob/master/CONTRIBUTING)
+## CONTRIBUTING
 
 See [CONTRIBUTING](https://github.com/wilsocr88/react-side-menu/blob/master/CONTRIBUTING)
