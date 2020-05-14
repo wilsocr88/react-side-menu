@@ -72,7 +72,6 @@ OR
 |------------:|-------------:|------:|
 | hr | boolean  | if true, this spot in the menu will display a horizonal separator line |
 
-## TODO
+## CONTRIBUTING [![contributions welcome](https://github.com/wilsocr88/react-side-menu/blob/master/CONTRIBUTING)
 
-* The component should take props to configure responsiveness behaviors, including breakpoints and display settings
-* Contribution guidelines
+See [CONTRIBUTING](https://github.com/wilsocr88/react-side-menu/blob/master/CONTRIBUTING)
