@@ -1,7 +1,6 @@
 {
   "name": "react-side-menu",
   "version": "0.2.0",
-  "private": true,
   "dependencies": {
     "react": "^16.13.1",
     "react-icons": "^3.10.0"
@@ -9,7 +8,7 @@
   "description": "A responsive iconographic side-menu for web apps",
   "main": "index.js",
   "author": "Craig Wilson <wilsocr88@gmail.com>",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://bitbucket.org/wilsocr88/react-side-menu"
