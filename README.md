@@ -2,11 +2,6 @@
 
 A responsive, iconographic side menu bar for React web apps
 
-## Dependencies
-
-* react 16.13.1
-* react-icons 3.10.0
-
 ## Usage
 
 * Import your icon components, and the SideMenu component, into your React app:
