@@ -2,6 +2,19 @@
 
 A responsive, iconographic side menu bar for React web apps
 
+![](https://raw.githubusercontent.com/wilsocr88/react-side-menu/master/React%20App%205-19-2020%209-44-00%20AM.png)
+
+Large
+
+![](https://raw.githubusercontent.com/wilsocr88/react-side-menu/master/React%20App%205-19-2020%209-44-22%20AM.png)
+
+Medium
+
+![](https://raw.githubusercontent.com/wilsocr88/react-side-menu/master/React%20App%205-19-2020%209-45-12%20AM.png)
+![](https://raw.githubusercontent.com/wilsocr88/react-side-menu/master/React%20App%205-19-2020%209-45-25%20AM.png)
+
+Mobile
+
 ## Usage
 
 * Import your icon components, and the SideMenu component, into your React app:
