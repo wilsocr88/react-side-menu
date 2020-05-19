@@ -8,4 +8,4 @@ or, if you find a bug, [an issue](https://github.com/wilsocr88/react-side-menu/i
 
 ## TODO
 
-* The component could take props to configure menu width and height, or take different types of icon (Images, other components) in the objects
+* The component could take props to configure responsiveness behaviors, including breakpoints and display settings
