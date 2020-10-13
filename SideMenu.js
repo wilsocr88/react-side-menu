@@ -12,6 +12,8 @@ class SideMenu extends React.Component {
         super( props )
         this.props = props
         this.toggleMenu = this.toggleMenu.bind(this)
+        this.resize = this.resize.bind(this)
+        this.breakPoint = 768
 
         window.addEventListener("resize", this.resize)
     }
@@ -21,7 +23,7 @@ class SideMenu extends React.Component {
     }
 
     resize() {
-        if ( window.innerWidth <= 860 ) {
+        if ( window.innerWidth <= this.breakPoint ) {
             this.MENU.classList.add("hidden")
             this.WHITESPACE_TARGET.style.zIndex = 0
             this.WHITESPACE_TARGET.style.backgroundColor = "rgba(0,0,0,0)"
@@ -45,7 +47,7 @@ class SideMenu extends React.Component {
     }
 
     componentDidMount() {
-        if ( window.innerWidth <= 860 ) {
+        if ( window.innerWidth <= this.breakPoint ) {
             this.MENU.classList.add("hidden")
             this.WHITESPACE_TARGET.style.zIndex = 0
             this.WHITESPACE_TARGET.style.backgroundColor = "rgba(0,0,0,0)"
