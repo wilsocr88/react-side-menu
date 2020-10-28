@@ -37,7 +37,7 @@
     transition: linear 300ms;
 }
 
-@media only screen and (max-width: 860px) {
+@media only screen and (max-width: 768px) {
     .menu {
         width: 300px;
         max-width: 100%;

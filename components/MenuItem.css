@@ -45,7 +45,7 @@ hr {
 }
 
 @media only screen
- and (max-width: 860px) {
+ and (max-width: 768px) {
     .menu-item {
         width: 100%;
         flex-direction: row;
