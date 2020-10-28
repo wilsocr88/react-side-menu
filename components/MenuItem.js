@@ -7,12 +7,6 @@ class MenuItem extends React.Component {
     constructor( props ) {
         super( props )
         this.props = props
-        this.state = {
-            icon: this.props.icon,
-            text: this.props.text,
-            link: this.props.link,
-            id: this.props.id
-        }
     }
 
     onClick( link ) {
@@ -26,19 +20,19 @@ class MenuItem extends React.Component {
     }
 
     componentDidMount() {
-        if ( window.location.pathname === this.state.link ) {
-            document.getElementById("menu-item-" + this.state.id ).classList.add("active")
+        if ( window.location.pathname === this.props.link ) {
+            document.getElementById("menu-item-" + this.props.id ).classList.add("active")
         }
     }
 
     render() {
         return (
             <div
-             id={"menu-item-" + this.state.id}
+             id={"menu-item-" + this.props.id}
              className="menu-item"
-             onClick={(e)=>this.onClick(this.state.link)}>
-                <div className="menu-item-icon">{this.renderIcon(this.state.icon)}</div>
-                <div className="menu-item-text">{this.state.text}</div>
+             onClick={(e)=>this.onClick(this.props.link)}>
+                <div className="menu-item-icon">{this.renderIcon(this.props.icon)}</div>
+                <div className="menu-item-text">{this.props.text}</div>
             </div>
         )
     }
