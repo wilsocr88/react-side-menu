@@ -11,74 +11,76 @@ class SideMenu extends React.Component {
     constructor( props ) {
         super( props )
         this.props = props
-        this.toggleMenu = this.toggleMenu.bind(this)
-        this.resize = this.resize.bind(this)
-        this.breakPoint = 768
-
-        window.addEventListener("resize", this.resize)
-    }
-
-    shouldComponentUpdate() {
-        return false
-    }
-
-    resize() {
-        if ( window.innerWidth <= this.breakPoint ) {
-            this.MENU.classList.add("hidden")
-            this.WHITESPACE_TARGET.style.zIndex = 0
-            this.WHITESPACE_TARGET.style.backgroundColor = "rgba(0,0,0,0)"
-        } else {
-            this.MENU.classList.remove("hidden")
-            this.WHITESPACE_TARGET.style.zIndex = 990
-            this.WHITESPACE_TARGET.style.backgroundColor = "rgba(100,100,100,0.3)"
+        this.state = {
+            isHidden: true,
+            breakPoint: 768,
+            whiteSpaceTargetStyle: {
+                zIndex: 0,
+                backgroundColor: "rgba(0,0,0,0)"
+            }
         }
     }
 
-    toggleMenu() {
-        if ( this.MENU.classList.contains("hidden") ) {
-            this.MENU.classList.remove("hidden")
-            this.WHITESPACE_TARGET.style.zIndex = 990
-            this.WHITESPACE_TARGET.style.backgroundColor = "rgba(100,100,100,0.3)"
+    resize = () => {
+        this.setState({
+            isHidden: window.innerWidth <= this.state.breakPoint ? true : false
+        })
+    }
+
+    toggleMenu = () => {
+        if ( this.state.isHidden ) {
+            this.showMenu()
         } else {
-            this.MENU.classList.add("hidden")
-            this.WHITESPACE_TARGET.style.zIndex = 0
-            this.WHITESPACE_TARGET.style.backgroundColor = "rgba(0,0,0,0)"
+            this.hideMenu()
+        }
+    }
+
+    showMenu = () => {
+        if ( this.state.isHidden ) {
+            this.setState({
+                isHidden: false,
+                whiteSpaceTargetStyle: {
+                    zIndex: 990,
+                    backgroundColor: "rgba(100,100,100,0.3)"
+                }
+            })
+        }
+    }
+
+    hideMenu = () => {
+        if ( !this.state.isHidden ) {
+            this.setState({
+                isHidden: true,
+                whiteSpaceTargetStyle: {
+                    zIndex: 0,
+                    backgroundColor: "rgba(0,0,0,0)"
+                }
+            })
         }
     }
 
     componentDidMount() {
-        if ( window.innerWidth <= this.breakPoint ) {
-            this.MENU.classList.add("hidden")
-            this.WHITESPACE_TARGET.style.zIndex = 0
-            this.WHITESPACE_TARGET.style.backgroundColor = "rgba(0,0,0,0)"
-        } else {
-            this.MENU.classList.remove("hidden")
-            this.WHITESPACE_TARGET.style.zIndex = 990
-            this.WHITESPACE_TARGET.style.backgroundColor = "rgba(100,100,100,0.3)"
-        }
-    }
+        window.addEventListener( "resize", this.resize )
 
-    closeMenu() {
-        if ( !this.MENU.classList.contains("hidden") ) {
-            this.MENU.classList.add("hidden")
-            this.WHITESPACE_TARGET.style.zIndex = 0
-            this.WHITESPACE_TARGET.style.backgroundColor = "rgba(0,0,0,0)"
-        }
-    }
-
-    componentDidMount() {
-        this.MENU = document.getElementById("menu")
-        this.WHITESPACE_TARGET = document.getElementById("menu-whitespace-target")
+        var isHidden = window.innerWidth <= this.state.breakPoint
+        this.setState({
+            isHidden: isHidden,
+            whiteSpaceTargetStyle: {
+                zIndex: isHidden ? 0 : 990,
+                backgroundColor: isHidden ? "rgba(0,0,0,0)" : "rgba(100,100,100,0.3)"
+            }
+        })
     }
 
     render() {
         var i = 0
+        var classList = this.state.isHidden ? "menu hidden" : "menu"
         return (
             <>
                 <div className="menu-button" onClick={this.toggleMenu}>
                     <MdMenu size="2em" />
                 </div>
-                <div className="menu" id="menu">
+                <div className={classList} id="menu">
                     {this.props.menu.map(( item ) => {
                         i++
                         if ( typeof item.hr === "undefined" ) {
@@ -93,7 +95,7 @@ class SideMenu extends React.Component {
                     })}
                     <br />
                 </div>
-                <div id="menu-whitespace-target" onClick={this.closeMenu}></div>
+                <div id="menu-whitespace-target" hidden={this.state.isHidden} onClick={this.hideMenu} style={this.state.whiteSpaceTargetStyle}></div>
             </>
         )
     }
