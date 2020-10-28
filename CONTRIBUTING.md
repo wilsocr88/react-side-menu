@@ -8,4 +8,4 @@ or, if you find a bug, [an issue](https://github.com/wilsocr88/react-side-menu/i
 
 ## TODO
 
-* The component could take props to configure responsiveness behaviors, including breakpoints and display settings
+* The component could take props to customize breakpoints and other display settings
