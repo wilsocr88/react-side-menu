@@ -2,18 +2,18 @@
 
 A responsive, iconographic side menu bar for React web apps
 
+**Large** (width 1360px+):
+
 ![](https://raw.githubusercontent.com/wilsocr88/react-side-menu/master/React%20App%205-19-2020%209-44-00%20AM.png)
 
-Large
+**Medium** (width 768px - 1359px)
 
 ![](https://raw.githubusercontent.com/wilsocr88/react-side-menu/master/React%20App%205-19-2020%209-44-22%20AM.png)
 
-Medium
+**Mobile** (width less than 768px)
 
 ![](https://raw.githubusercontent.com/wilsocr88/react-side-menu/master/React%20App%205-19-2020%209-45-12%20AM.png)
 ![](https://raw.githubusercontent.com/wilsocr88/react-side-menu/master/React%20App%205-19-2020%209-45-25%20AM.png)
-
-Mobile
 
 ## Usage
 
@@ -35,7 +35,7 @@ const menu = [
         icon: MdAddCircle,
         text: "New",
         link: "/new"
-    ,
+    },
     {
         icon: MdStar,
         text: "Favorites",
