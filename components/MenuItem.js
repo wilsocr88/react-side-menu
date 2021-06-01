@@ -2,40 +2,34 @@ import React from 'react'
 
 import './MenuItem.css'
 
-class MenuItem extends React.Component {
+const MenuItem = props => {
 
-    constructor( props ) {
-        super( props )
-        this.props = props
-    }
-
-    onClick( link ) {
+    const handleClick = link => {
         window.location = link
     }
 
-    renderIcon( Icon ) {
+    const renderIcon = Icon => {
         return(
             <Icon size="2em" />
         )
     }
 
-    componentDidMount() {
-        if ( window.location.pathname === this.props.link ) {
-            document.getElementById("menu-item-" + this.props.id ).classList.add("active")
+    const getClassName = () => {
+        if ( window.location.pathname === props.link ) {
+            return "menu-item active"
         }
+        return "menu-item"
     }
 
-    render() {
-        return (
-            <div
-             id={"menu-item-" + this.props.id}
-             className="menu-item"
-             onClick={(e)=>this.onClick(this.props.link)}>
-                <div className="menu-item-icon">{this.renderIcon(this.props.icon)}</div>
-                <div className="menu-item-text">{this.props.text}</div>
-            </div>
-        )
-    }
+    return (
+        <div
+            id={ "menu-item-" + props.id }
+            className={ getClassName() }
+            onClick={ e => handleClick( props.link ) }>
+            <div className="menu-item-icon">{ renderIcon( props.icon )}</div>
+            <div className="menu-item-text">{ props.text }</div>
+        </div>
+    )
 
 }
 
