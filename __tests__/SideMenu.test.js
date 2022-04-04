@@ -1,7 +1,7 @@
-import React from 'react'
-import renderer from 'react-test-renderer'
-import SideMenu from '../SideMenu'
-import { MdStar } from 'react-icons/md'
+import React from 'react';
+import renderer from 'react-test-renderer';
+import SideMenu from '../SideMenu';
+import { MdStar } from 'react-icons/md';
 
 test('Menu renders correctly', () => {
     const component = renderer.create(
@@ -15,7 +15,7 @@ test('Menu renders correctly', () => {
                 hr: true
             }
         ]} />
-    )
-    let tree = component.toJSON()
-    expect( tree ).toMatchSnapshot()
-})
+    );
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+});
