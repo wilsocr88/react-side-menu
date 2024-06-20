@@ -21,7 +21,7 @@ const MenuItem = props => {
         <div
             id={"menu-item-" + props.id}
             className={getClassName()}
-            onClick={e => props.onClick || handleClick(props.link)}
+            onClick={e => handleClick(props.link)}
         >
             <div className="menu-item-icon">{renderIcon(props.icon)}</div>
             <div className="menu-item-text">{props.text}</div>

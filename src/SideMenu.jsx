@@ -75,7 +75,6 @@ const SideMenu = props => {
                                 icon={item.icon}
                                 text={item.text}
                                 link={item.link}
-                                onClick={props.onClick}
                             />
                         );
                     } else {
