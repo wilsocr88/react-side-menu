@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from 'react';
-import MenuItem from './components/MenuItem';
-import { MdMenu } from 'react-icons/md';
-import './SideMenu.css';
+import React, { useEffect, useState } from "react";
+import MenuItem from "./components/MenuItem";
+import { MdMenu } from "react-icons/md";
+import "./SideMenu.css";
 
 const SideMenu = props => {
     const [isHidden, setIsHidden] = useState(true);
     const [whiteSpaceTargetStyle, setWhiteSpaceTargetStyle] = useState({
         zIndex: 0,
-        backgroundColor: "rgba(0,0,0,0)"
+        backgroundColor: "rgba(0,0,0,0)",
     });
 
     const resize = () => {
         setIsHidden(window.innerWidth <= 768 ? true : false);
-    }
+    };
 
     const toggleMenu = () => {
         if (isHidden) {
@@ -20,41 +20,43 @@ const SideMenu = props => {
         } else {
             hideMenu();
         }
-    }
+    };
 
     const showMenu = () => {
         if (isHidden) {
             setIsHidden(false);
             setWhiteSpaceTargetStyle({
                 zIndex: 990,
-                backgroundColor: "rgba(100,100,100,0.3)"
+                backgroundColor: "rgba(100,100,100,0.3)",
             });
         }
-    }
+    };
 
     const hideMenu = () => {
         if (!isHidden) {
             setIsHidden(true);
             setWhiteSpaceTargetStyle({
                 zIndex: 0,
-                backgroundColor: "rgba(0,0,0,0)"
+                backgroundColor: "rgba(0,0,0,0)",
             });
         }
-    }
+    };
 
     const classList = () => {
         if (isHidden) {
             return "menu hidden";
         }
         return "menu";
-    }
+    };
 
     useEffect(() => {
         window.addEventListener("resize", resize);
         setIsHidden(window.innerWidth <= 768);
         setWhiteSpaceTargetStyle({
             zIndex: isHidden ? 0 : 990,
-            backgroundColor: isHidden ? "rgba(0,0,0,0)" : "rgba(100,100,100,0.3)"
+            backgroundColor: isHidden
+                ? "rgba(0,0,0,0)"
+                : "rgba(100,100,100,0.3)",
         });
     }, []);
 
@@ -73,18 +75,22 @@ const SideMenu = props => {
                                 icon={item.icon}
                                 text={item.text}
                                 link={item.link}
+                                onClick={props.onClick}
                             />
                         );
                     } else {
-                        return (
-                            <hr key={index} />
-                        );
+                        return <hr key={index} />;
                     }
                 })}
                 <br />
             </div>
-            <div id="menu-whitespace-target" hidden={isHidden} onClick={hideMenu} style={whiteSpaceTargetStyle}></div>
+            <div
+                id="menu-whitespace-target"
+                hidden={isHidden}
+                onClick={hideMenu}
+                style={whiteSpaceTargetStyle}
+            ></div>
         </>
     );
-}
+};
 export default SideMenu;
