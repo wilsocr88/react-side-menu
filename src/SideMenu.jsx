@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MenuItem from "./components/MenuItem";
+import MenuItem from "./components/MenuItem.jsx";
 import { MdMenu } from "react-icons/md";
 import "./SideMenu.css";
 
